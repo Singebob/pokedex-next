@@ -1,0 +1,23 @@
+.card {
+    @apply flex;
+    @apply flex-col;
+    @apply rounded-lg;
+    @apply shadow-lg;
+    @apply bg-card;
+    @apply items-center;
+    @apply w-11/12;
+    @apply hover:scale-110;
+    @apply transform;
+}
+
+.cardId {
+    @apply self-start;
+    @apply bg-yellow-600;
+    @apply rounded-md;
+    @apply w-12;
+}
+
+.cardIdText {
+    @apply text-center;
+    @apply w-full;
+}
