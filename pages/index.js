@@ -7,9 +7,14 @@ import { getAllPokemons } from '../lib/pokemons'
 
 export default function Home() {
   const [pokemons, setPokemons] = useState()
+  const [defaultPokemons, setDefaultPokemons] = useState()
+  
   useEffect(async () => {
-    setPokemons(await getAllPokemons())
+    const allPokemons = await getAllPokemons()
+    setDefaultPokemons(allPokemons)
+    setPokemons(allPokemons)
   },[])
+
   return (
     <div>
       <Head>
@@ -17,12 +22,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="font-body h-screen flex flex-col">
-        <Topbar></Topbar>
+        <Topbar defaultPokemons={defaultPokemons} setPokemons={setPokemons}></Topbar>
         {pokemons ? (
           <div className="flex flex-row flex-wrap justify-center w-full">
           {
             pokemons.map((pokemon) => (
-              <div className="w-3/12 m-2">
+              <div className="w-3/12 m-2" key={pokemon.name}>
                 <Link href={`/pokemons/${pokemon.name}`}>
                   <a>
                     <Pokecard name={pokemon.name}/>
