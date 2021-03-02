@@ -1,11 +1,6 @@
-.search {
-  @apply w-1/6;
-  @apply mt-5;
-  @apply border-2;
-  @apply border-gray-300;
-  @apply bg-white;
-  @apply h-10;
-  @apply rounded-lg;
-  @apply text-2xl;
-  @apply focus:outline-none;
+.title {
+  @apply text-center;
+  @apply text-white;
+  @apply text-5xl;
+  @apply my-8;
 }

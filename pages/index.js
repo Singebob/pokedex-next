@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Pokecard from '../components/Pokecard/Pokecard'
+import Search from '../components/Search/Search'
 import Topbar from '../components/Topbar/Topbar'
 import { getAllPokemons } from '../lib/pokemons'
 
@@ -22,7 +23,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="font-body h-screen flex flex-col">
-        <Topbar defaultPokemons={defaultPokemons} setPokemons={setPokemons}></Topbar>
+        <div className="w-full justify-center my-8 flex flex-col items-center">
+          <Topbar></Topbar>
+          <Search defaultPokemons={defaultPokemons} setPokemons={setPokemons}></Search>
+        </div>
         {pokemons ? (
           <div className="flex flex-row flex-wrap justify-center w-full">
           {
